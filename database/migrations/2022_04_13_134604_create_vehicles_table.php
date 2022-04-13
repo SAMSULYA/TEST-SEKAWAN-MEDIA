@@ -15,10 +15,10 @@ class CreateVehiclesTable extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama-kendaraan');
-            $table->date('jadwal-service');
-            $table->integer('konsumsi-bbm');
-            $table->string('satuan-bbm');
+            $table->string('nama_kendaraan');
+            $table->date('jadwal_service');
+            $table->integer('konsumsi_bbm');
+            $table->string('satuan_bbm');
             $table->timestamps();
         });
     }

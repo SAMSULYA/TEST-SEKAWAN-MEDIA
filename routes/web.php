@@ -19,6 +19,13 @@ Auth::routes(['register' => false]);
 
 Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
 
+Route::resource('drivers', 'DriverController');
+
+Route::resource('vehicles', 'VehicleController');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
 
 
