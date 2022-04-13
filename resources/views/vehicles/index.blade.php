@@ -22,9 +22,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Data Driver
+                    Data Kendaraan
                     <div class="text-right">
-                        <a class="btn btn-success" href="{{ route('drivers.create') }}">Tambah Driver</a>
+                        <a class="btn btn-success" href="{{ route('vehicles.create') }}">Tambah Kendaraan</a>
                     </div>
                 </div>
 
@@ -32,16 +32,22 @@
                     <table class="table">
                         <tr>
                             <th>Id</th>
-                            <th>Nama Driver</th>
+                            <th>Nama Kendaraan</th>
+                            <th>Jadwal Service</th>
+                            <th>Konsumsi BBM</th>
+                            <th>Satuan BBM</th>
                             <th>Aksi</th>
                         </tr>
-                        @foreach ($drivers as $driver)
+                        @foreach ($vehicles as $vehicle)
                             <tr>
-                                <td>{{ $driver->id }}</td>
-                                <td>{{ $driver->nama_driver }}</td>
+                                <td>{{ $vehicle->id }}</td>
+                                <td>{{ $vehicle->nama_kendaraan }}</td>
+                                <td>{{ $vehicle->jadwal_service }}</td>
+                                <td>{{ $vehicle->konsumsi_bbm }}</td>
+                                <td>{{ $vehicle->satuan_bbm }}</td>
                                 <td>
-                                    <form action="{{ route('drivers.destroy',$driver->id) }}" method="POST">
-                                        <a class="btn btn-primary" href="{{ route('drivers.edit',$driver->id) }}">Edit</a>
+                                    <form action="{{ route('vehicles.destroy',$vehicle->id) }}" method="POST">
+                                        <a class="btn btn-primary" href="{{ route('vehicles.edit',$vehicle->id) }}">Edit</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
