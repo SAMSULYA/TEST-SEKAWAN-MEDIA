@@ -17,7 +17,7 @@
                         <a href="{{ route('vehicles.index')}}">Kendaraan</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{{ route('order')}}">Pemesanan Kendaraan</a>
+                        <a href="{{ route('orders.index')}}">Pemesanan Kendaraan</a>
                     </li>
                 </ul>
             </div>
@@ -46,14 +46,13 @@
                                 <td>{{ $order->name }}</td>
                                 <td>{{ $order->nama_kendaraan }}</td>
                                 <td>{{ $order->nama_driver }}</td>
-                                {{-- <td>
-                                    <form action="{{ route('drivers.destroy',$driver->id) }}" method="POST">
-                                        <a class="btn btn-primary" href="{{ route('drivers.edit',$driver->id) }}">Edit</a>
+                                <td>
+                                    <form action="{{ route('orders.destroy',$order->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
-                                </td> --}}
+                                </td>
                             </tr>
                         @endforeach
                     </table>
