@@ -25,37 +25,35 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Data Kendaraan
-                    <div class="text-right">
-                        <a class="btn btn-success" href="{{ route('vehicles.create') }}">Tambah Kendaraan</a>
-                    </div>
+                    Data Driver
+                    {{-- <div class="text-right">
+                        <a class="btn btn-success" href="{{ route('drivers.create') }}">Tambah Driver</a>
+                    </div> --}}
                 </div>
 
                 <div class="card-body">
                     <table class="table">
                         <tr>
-                            <th>Id</th>
+                            <th>Jadwal Pemesanan</th>
+                            <th>Nama Pemesan</th>
                             <th>Nama Kendaraan</th>
-                            <th>Jadwal Service</th>
-                            <th>Konsumsi BBM</th>
-                            <th>Satuan BBM</th>
+                            <th>Nama Driver</th>
                             <th>Aksi</th>
                         </tr>
-                        @foreach ($vehicles as $vehicle)
+                        @foreach ($order as $order)
                             <tr>
-                                <td>{{ $vehicle->id }}</td>
-                                <td>{{ $vehicle->nama_kendaraan }}</td>
-                                <td>{{ $vehicle->jadwal_service }}</td>
-                                <td>{{ $vehicle->konsumsi_bbm }}</td>
-                                <td>{{ $vehicle->satuan_bbm }}</td>
-                                <td>
-                                    <form action="{{ route('vehicles.destroy',$vehicle->id) }}" method="POST">
-                                        <a class="btn btn-primary" href="{{ route('vehicles.edit',$vehicle->id) }}">Edit</a>
+                                <td>{{ $order->jadwal_pemesanan }}</td>
+                                <td>{{ $order->name }}</td>
+                                <td>{{ $order->nama_kendaraan }}</td>
+                                <td>{{ $order->nama_driver }}</td>
+                                {{-- <td>
+                                    <form action="{{ route('drivers.destroy',$driver->id) }}" method="POST">
+                                        <a class="btn btn-primary" href="{{ route('drivers.edit',$driver->id) }}">Edit</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
-                                </td>
+                                </td> --}}
                             </tr>
                         @endforeach
                     </table>

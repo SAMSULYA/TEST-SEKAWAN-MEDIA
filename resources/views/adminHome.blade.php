@@ -16,6 +16,9 @@
                     <li class="list-group-item">
                         <a href="{{ route('vehicles.index')}}">Kendaraan</a>
                     </li>
+                    <li class="list-group-item">
+                        <a href="{{ route('order')}}">Pemesanan Kendaraan</a>
+                    </li>
                 </ul>
             </div>
         </div>

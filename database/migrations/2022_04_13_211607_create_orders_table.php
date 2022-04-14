@@ -19,7 +19,9 @@ class CreateOrdersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedInteger('vehicle_id');
             $table->foreign('vehicle_id')->references('id')->on('vehicles');
-            $table->date('jadwal-pemesanan');
+            $table->unsignedInteger('driver_id');
+            $table->foreign('driver_id')->references('id')->on('drivers');
+            $table->date('jadwal_pemesanan');
             $table->timestamps();
         });
     }

@@ -23,6 +23,8 @@ Route::resource('drivers', 'DriverController');
 
 Route::resource('vehicles', 'VehicleController');
 
+Route::get('/order','OrderController@index')->name('order');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
